@@ -1,0 +1,22 @@
+{
+    "name": "Search definition",
+    "description": "Définition of words",
+    "version":"1.0",
+    "manifest_version": 3,
+    "content_scripts": [
+        {
+          "matches": [
+            "<all_urls>"
+          ],
+          "js": ["content.js"]
+        }
+      ],
+    "background": {
+        "service-worker" : "background.js"
+    },
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "definition",
+        "default_icons": "/img/icon_search.png"
+        }
+    }
