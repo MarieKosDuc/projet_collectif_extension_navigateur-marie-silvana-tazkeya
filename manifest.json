@@ -12,7 +12,7 @@
         }
       ],
     "background": {
-        "service-worker" : "background.js"
+        "service_worker" : "background.js"
     },
     "action":{
         "default_popup": "index.html",
