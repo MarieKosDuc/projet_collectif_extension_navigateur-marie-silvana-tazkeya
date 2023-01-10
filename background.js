@@ -1,10 +1,6 @@
-// checking that the background script is running
-console.log("background running");
+// Checking that the service runner is active
+console.log("Service worker is active !");
 
-// creating an event listener for messages received, triggering the "receiver" function
-chrome.runtime.onMessage.addListener(receiver);
-
-function receiver(request, sender, sendResponse) {
-  // logging the request
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   console.log(request);
-}
+});

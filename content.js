@@ -1,5 +1,7 @@
-// adding an event listener for the "mouse up" event, triggering the selectWord function
-window.addEventListener("mouseup", selectWord);
+// Adding an event listener for word selection
+document.addEventListener("mouseup", selectWord);
+
+console.log("plop");
 
 function selectWord() {
   // getting the selected text
@@ -8,21 +10,10 @@ function selectWord() {
 
   // sending a message to the background JS
   if (selectedText.length > 0) {
-    let message = {
-      text: selectedText,
-    };
-    chrome.runtime.sendMessage(message);
+    (async () => {
+      const response = await chrome.runtime.sendMessage(selectedText);
+      // do something with response here, not outside the function
+      console.log(response);
+    })();
   }
 }
-
-//essai de fonction asynchrone
-// window.addEventListener("mouseup", async() =>{
-//     let selectedText = window.getSelection().toString();
-//     console.log(selectedText);
-
-//     if (selectedText.length > 0) {
-//     let message = {
-//         text: selectedText,
-//         };
-//         chrome.runtime.sendMessage(message);
-// })
