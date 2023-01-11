@@ -1,19 +1,22 @@
+console.log("Content.js active!");
+
 // Adding an event listener for word selection
 document.addEventListener("mouseup", selectWord);
 
-console.log("plop");
+let wordToDefine;
 
 function selectWord() {
   // getting the selected text
-  let selectedText = window.getSelection().toString();
-  console.log(selectedText);
+  wordToDefine = window.getSelection().toString();
+  console.log(wordToDefine);
 
-  // sending a message to the background JS
-  if (selectedText.length > 0) {
-    (async () => {
-      const response = await chrome.runtime.sendMessage(selectedText);
-      // do something with response here, not outside the function
-      console.log(response);
-    })();
-  }
+  // fetch from the dictionary API
+  fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + wordToDefine)
+    .then((response) => response.json())
+    // .then((response) => console.log(JSON.stringify(response)))
+    // .catch((error) => console.log("Erreur : " + error))
+    .then((response) => {
+      let def = response[0].meanings[0].definitions[0].definition;
+      console.log(def);
+    });
 }
