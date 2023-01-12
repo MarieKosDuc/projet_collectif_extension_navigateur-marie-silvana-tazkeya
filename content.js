@@ -1,7 +1,7 @@
 console.log("Content.js active!");
 
 // Adding an event listener for word selection
-document.addEventListener("mouseup", selectWord);
+document.addEventListener("dblclick", selectWord);
 
 // Creating the necessary variables
 let wordToDefine;
@@ -12,21 +12,14 @@ function selectWord() {
   // getting the selected text
   wordToDefine = window.getSelection().toString();
   console.log("mot à définir : ", wordToDefine);
-  // getDefinition(wordToDefine);
+  getDefinition(wordToDefine);
 }
 
 function getDefinition(word) {
   // fetch from the dictionary API
   fetch("https://api.dictionaryapi.dev/api/v2/entries/en/" + word)
     .then((response) => response.json())
-    .then(console.log(response));
-  // .then((response) => console.log(JSON.stringify(response)))
-  // .catch((error) => console.log("Erreur : " + error))
-  // .then((response) => {
-  // let def = response[0].meanings[0].definitions[0].definition;
-  // console.log(def);
-  // });
-  // .then(setValues(response));
+    .then((response) => setValues(response));
 }
 
 function setValues(returnedArray) {
@@ -37,7 +30,11 @@ function setValues(returnedArray) {
     wordDef = simplifiedArray[i].definitions[0].definition;
     console.log(category, ": ", wordDef);
   }
-  // get audio source
-  audioSource = returnedArray[0].phonetics[1].audio;
-  console.log(audioSource);
+  // get audio source : ----------- NOT WORKING ------------------
+  // if (returnedArray[0].phonetics[0].audio.length !== 0) {
+  //   audioSource = returnedArray[0].phonetics[0].audio;
+  //   console.log("audio source : ", audioSource);
+  // } else {
+  //   audioSource = returnedArray[0].phonetics[1].audio;
+  // }
 }
