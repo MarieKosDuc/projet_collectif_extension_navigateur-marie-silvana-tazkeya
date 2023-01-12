@@ -1,11 +1,19 @@
 console.log("Content.js active!");
 
+// test d'insertion de HTML
+// const init = function () {
+//   const injectElement = document.createElement("div");
+//   injectElement.className = "Hello from the other side";
+//   document.body.appendChild(injectElement);
+// };
+// init();
+
 // Adding an event listener for word selection
 document.addEventListener("dblclick", selectWord);
 
 // Creating the necessary variables
-let wordToDefine;
-// wordDefinitions = [],
+let wordToDefine,
+  wordDefinitions = [];
 // audioSource;
 
 function selectWord() {
@@ -28,8 +36,15 @@ function setValues(returnedArray) {
   for (i = 0; i < simplifiedArray.length; i++) {
     category = simplifiedArray[i].partOfSpeech;
     wordDef = simplifiedArray[i].definitions[0].definition;
-    console.log(category, ": ", wordDef);
+
+    // pushing it into an array
+    wordDefinitions.push(category + ": " + wordDef);
   }
+  console.log(wordDefinitions);
+
+  // creating HTML
+  createDiv(wordDefinitions);
+  // popupCall(wordDefinitions);
   // get audio source : ----------- NOT WORKING ------------------
   // if (returnedArray[0].phonetics[0].audio.length !== 0) {
   //   audioSource = returnedArray[0].phonetics[0].audio;
@@ -38,3 +53,14 @@ function setValues(returnedArray) {
   //   audioSource = returnedArray[0].phonetics[1].audio;
   // }
 }
+
+function createDiv(def) {
+  const injectElement = document.createElement("div");
+  injectElement.className = "Word definition";
+  injectElement.innerHTML = def;
+  document.body.appendChild(injectElement);
+}
+
+// function popupCall(msg) {
+//   chrome.runtime.sendMessage(msg);
+// }
