@@ -8,9 +8,11 @@
           "matches": [
             "<all_urls>"
           ],
-          "js": ["content.js"]
+          "js": ["content.js"],
+          "run_at": "document_end"
         }
       ],
+    "host_permissions": ["<all_urls>"],
     "background": {
         "service_worker" : "background.js"
     },
