@@ -39,7 +39,6 @@ function getDefinition(word) {
 }
 
 function setValues(returnedArray) {
-  definitionDiv.style.display = "block";
   // getting the definitions by grammatical gategory
   let wordDefinitions = [];
   if (returnedArray.title == "No Definitions Found") {
@@ -56,13 +55,15 @@ function setValues(returnedArray) {
   }
   console.log(wordDefinitions);
 
+  //calling the setDisplay function
+  setDisplay(wordDefinitions);
+}
+
+function setDisplay(aDefinition) {
   // creating HTML
   setDef = document.getElementById("textHere");
-  setDef.innerHTML = wordDefinitions;
+  setDef.innerHTML = aDefinition;
 
-  // insert CSS - not working
-  // chrome.scripting.insertCSS({
-  //   files: ["style.css"],
-  //   target: { tabId: tab.id },
-  // });
+  // setting the display style on
+  definitionDiv.style.display = "block";
 }
