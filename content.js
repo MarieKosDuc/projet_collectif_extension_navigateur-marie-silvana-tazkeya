@@ -1,22 +1,20 @@
 console.log("Content.js active!");
 
-// test d'insertion de HTML
-// const init = function () {
-//   const injectElement = document.createElement("div");
-//   injectElement.className = "Hello from the other side";
-//   document.body.appendChild(injectElement);
-// };
-// init();
+// Creating a div that will contain the definitions
+function createDiv() {
+  const injectElement = document.createElement("div");
+  injectElement.setAttribute("id", "definitionDiv");
+  injectElement.className = "Word definition";
+  document.body.appendChild(injectElement);
+}
+
+createDiv();
 
 // Adding an event listener for word selection
 document.addEventListener("dblclick", selectWord);
 
-// Creating the necessary variables
-let wordToDefine,
-  wordDefinitions = [];
-// audioSource;
-
 function selectWord() {
+  let wordToDefine;
   // getting the selected text
   wordToDefine = window.getSelection().toString();
   console.log("mot à définir : ", wordToDefine);
@@ -32,7 +30,8 @@ function getDefinition(word) {
 
 function setValues(returnedArray) {
   // getting the definitions by grammatical gategory
-  simplifiedArray = returnedArray[0].meanings;
+  let wordDefinitions = [];
+  let simplifiedArray = returnedArray[0].meanings;
   for (i = 0; i < simplifiedArray.length; i++) {
     category = simplifiedArray[i].partOfSpeech;
     wordDef = simplifiedArray[i].definitions[0].definition;
@@ -43,24 +42,6 @@ function setValues(returnedArray) {
   console.log(wordDefinitions);
 
   // creating HTML
-  createDiv(wordDefinitions);
-  // popupCall(wordDefinitions);
-  // get audio source : ----------- NOT WORKING ------------------
-  // if (returnedArray[0].phonetics[0].audio.length !== 0) {
-  //   audioSource = returnedArray[0].phonetics[0].audio;
-  //   console.log("audio source : ", audioSource);
-  // } else {
-  //   audioSource = returnedArray[0].phonetics[1].audio;
-  // }
+  setDef = document.getElementById("definitionDiv");
+  setDef.innerText = wordDefinitions;
 }
-
-function createDiv(def) {
-  const injectElement = document.createElement("div");
-  injectElement.className = "Word definition";
-  injectElement.innerHTML = def;
-  document.body.appendChild(injectElement);
-}
-
-// function popupCall(msg) {
-//   chrome.runtime.sendMessage(msg);
-// }
