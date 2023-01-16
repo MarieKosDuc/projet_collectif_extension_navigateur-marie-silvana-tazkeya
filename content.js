@@ -1,8 +1,5 @@
 console.log("Content.js active!");
 
-// Adding an event listener for word selection
-document.addEventListener("dblclick", selectWord);
-
 // Creating a div that will contain the definitions
 function createDiv() {
   const injectElement = document.createElement("div");
@@ -12,6 +9,9 @@ function createDiv() {
 }
 
 createDiv();
+
+// Adding an event listener for word selection
+document.addEventListener("dblclick", selectWord);
 
 function selectWord() {
   let wordToDefine;
