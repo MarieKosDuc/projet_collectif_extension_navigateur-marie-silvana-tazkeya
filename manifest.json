@@ -9,6 +9,7 @@
             "<all_urls>"
           ],
           "js": ["content.js"],
+          "css" : ["style.css"],
           "run_at": "document_end"
         }
       ],
@@ -20,5 +21,6 @@
         "default_popup": "index.html",
         "default_title": "definition",
         "default_icons": "/img/icon_search.png"
-        }
+        },
+    "permissions": ["activeTab", "scripting"]
     }

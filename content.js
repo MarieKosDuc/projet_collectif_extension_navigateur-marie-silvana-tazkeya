@@ -44,4 +44,9 @@ function setValues(returnedArray) {
   // creating HTML
   setDef = document.getElementById("definitionDiv");
   setDef.innerText = wordDefinitions;
+
+  chrome.scripting.insertCSS({
+    files: ["style.css"],
+    target: { tabId: tab.id },
+  });
 }
