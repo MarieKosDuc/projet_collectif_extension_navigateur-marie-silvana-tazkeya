@@ -40,17 +40,24 @@ function getDefinition(word) {
 
 function setValues(returnedArray) {
   // getting the definitions by grammatical gategory
-  let wordDefinitions = [];
+  let wordDefinitions = "";
+
+  // if the API returns a null response
   if (returnedArray.title == "No Definitions Found") {
-    wordDefinitions.push("Sorry, no definition found");
+    wordDefinitions = "Sorry, no definition found";
+
+    // if the API returns a full response
   } else {
     let simplifiedArray = returnedArray[0].meanings;
     for (i = 0; i < simplifiedArray.length; i++) {
       category = simplifiedArray[i].partOfSpeech;
       wordDef = simplifiedArray[i].definitions[0].definition;
 
-      // pushing it into an array
-      wordDefinitions.push(category + ": " + wordDef + "<br />");
+      // capitalizing the first letter of the grammatical category
+      categoryUp = category.charAt(0).toUpperCase() + category.slice(1);
+
+      // adding to the definition string
+      wordDefinitions += categoryUp + ": " + wordDef + "<br />";
     }
   }
   console.log(wordDefinitions);
@@ -66,4 +73,12 @@ function setDisplay(aDefinition) {
 
   // setting the display style on
   definitionDiv.style.display = "block";
+}
+
+// Adding an event listener for simple click
+document.addEventListener("click", removeCSS);
+
+function removeCSS() {
+  // setting the display style off
+  definitionDiv.style.display = "none";
 }
