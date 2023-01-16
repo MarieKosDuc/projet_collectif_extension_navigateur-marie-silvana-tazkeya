@@ -14,6 +14,13 @@ function createDiv() {
   // adding the content text to the container
   injectElement.appendChild(injectTextContentDiv);
 
+  // creating an X button
+  const removeButton = document.createElement("button");
+  removeButton.setAttribute("id", "Btn");
+  removeButton.innerHTML = "X";
+  // removeButton.style.cssText = "position: relative; top: 10px; right: 10px;";
+  injectElement.appendChild(removeButton);
+
   // adding the definitions div to the page's body
   document.body.appendChild(injectElement);
 }
@@ -72,13 +79,16 @@ function setDisplay(aDefinition) {
   setDef.innerHTML = aDefinition;
 
   // setting the display style on
+  let definitionDiv = document.getElementById("definitionDiv");
   definitionDiv.style.display = "block";
 }
 
 // Adding an event listener for simple click
-document.addEventListener("click", removeCSS);
+let myButton = document.getElementById("Btn");
+myButton.addEventListener("click", removeCSS);
 
 function removeCSS() {
   // setting the display style off
+  let definitionDiv = document.getElementById("definitionDiv");
   definitionDiv.style.display = "none";
 }
