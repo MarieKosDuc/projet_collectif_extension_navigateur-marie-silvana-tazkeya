@@ -3,18 +3,17 @@
     /* margin-top:23px; */
     margin-left:-50px;
     color:rgb(255, 255, 255);
-    background:rgba(255, 0, 0, 0.9);
+    background:rgba(127, 116, 116, 0.9);
     padding:15px;
-    /* border-radius:3px; */
+    border-radius:10px;
     box-shadow:0 0 2px rgba(0,0,0,.5);
-    display:"block";
+    display:none;
     width:0 auto;
     height:0 auto;
     top:0px;
     left:50%;
     z-index: 1000;
 }
-
 
 
 

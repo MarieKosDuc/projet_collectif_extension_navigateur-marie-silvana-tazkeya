@@ -39,6 +39,7 @@ function getDefinition(word) {
 }
 
 function setValues(returnedArray) {
+  definitionDiv.style.display = "block";
   // getting the definitions by grammatical gategory
   let wordDefinitions = [];
   if (returnedArray.title == "No Definitions Found") {
