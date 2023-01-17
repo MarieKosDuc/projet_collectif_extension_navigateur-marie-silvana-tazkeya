@@ -83,6 +83,17 @@ function setDisplay(aDefinition) {
   definitionDiv.style.display = "block";
 }
 
+
+//display the div beside the word clicked
+
+document.addEventListener('dblclick', moveMouse);
+function moveMouse(e){
+  let myDiv = document.getElementById("definitionDiv");
+  myDiv.style.left = e.pageX + 'px';
+  myDiv.style.top =  e.pageY + 'px';
+}
+
+
 // Adding an event listener for simple click
 let myButton = document.getElementById("Btn");
 myButton.addEventListener("click", removeCSS);
@@ -92,3 +103,17 @@ function removeCSS() {
   let definitionDiv = document.getElementById("definitionDiv");
   definitionDiv.style.display = "none";
 }
+
+// document.addEventListener('dblclick', function(event) {
+//   var clickedElement = event.target;
+//    let myDiv = document.getElementById("definitionDiv");
+
+//   myDiv.style.position = 'absolute';
+//   myDiv.style.left = clickedElement.offsetLeft + clickedElement.offsetWidth + 'px';
+//   myDiv.style.top = clickedElement.offsetTop + 'px';
+  
+//   // Add the div to the page
+
+// });
+
+//
