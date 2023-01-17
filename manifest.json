@@ -18,7 +18,9 @@
       "service_worker" : "background.js"
   },
   "action":{
-      "default_popup": "index.html",
+      "default_popup": "index.html", 
+      "default_popup_page": "popup.html", 
+
       "default_title": "definition",
       "default_icons": "img/dictionary-16.png"
   },
