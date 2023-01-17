@@ -18,7 +18,7 @@ function createDiv() {
   const removeButton = document.createElement("button");
   removeButton.setAttribute("id", "Btn");
   removeButton.innerHTML = "X";
-  // removeButton.style.cssText = "position: relative; top: 10px; right: 10px;";
+  // removeButton.style.cssText = "position: absolue; top: 15px; right: 10px;";
   injectElement.appendChild(removeButton);
 
   // adding the definitions div to the page's body

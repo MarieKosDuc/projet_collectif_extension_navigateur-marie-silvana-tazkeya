@@ -1,21 +1,52 @@
 #definitionDiv {
     position:fixed;
     /* margin-top:23px; */
-    margin-left:-50px;
-    color:rgb(255, 255, 255);
-    background:rgba(127, 116, 116, 0.9);
+    /* margin-left:-60px; */
+    color:rgb(0, 0, 0);
+    background:#f0f0f0;
     padding:15px;
-    border-radius:10px;
-    box-shadow:0 0 2px rgba(0,0,0,.5);
+    border-radius:15px;
+    /* box-shadow:0 0 2px rgba(0,0,0,.5); */
+    box-shadow: 15px 15px 25px 0px rgba(0, 0, 0, 0.728),
+    -15px -15px 25px 0px rgba(255, 255, 255, 0.8);
+    /* cursor: grab; */
     display:none;
     width:0 auto;
     height:0 auto;
     top:0px;
-    left:50%;
+    right:0%;
     z-index: 1000;
+    font-family: sans-serif;
 }
 
+#textHere
+{
+    padding:10px 6px;  
+}
+/* border-radius: 20px; */
 
 
-
-
+#Btn {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: rgb(255, 255, 255);
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-end;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: black;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: rgb(0, 0, 0);
+    border-image: initial;
+}
