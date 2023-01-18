@@ -12,18 +12,20 @@ body{
 } 
 .title > h1 {
     color :blueviolet;
-    font-weight: 100;
+    font-weight: bold;
     margin: 0;
+    text-align: center;
 } 
 footer{
     background-color:antiquewhite; 
     width: 450px;
     min-height: 200px ;
     margin: 0; 
+    text-align: center;
 } 
 .box {
     height: 150px;
-    font-family: Impact;
+    font-family: Impact; 
 } 
 .conteneur {
     display: grid;
