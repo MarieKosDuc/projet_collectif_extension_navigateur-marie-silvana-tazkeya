@@ -10,7 +10,8 @@
         ],
         "js": ["content.js"],
         "css" : ["style.css"],
-        "run_at": "document_end"
+        "run_at": "document_end" 
+        
       }
     ],
   "host_permissions": ["<all_urls>"],
@@ -18,8 +19,8 @@
       "service_worker" : "background.js"
   },
   "action":{
-      "default_popup": "index.html", 
-      "default_popup_page": "popup.html", 
+      "default_popup": "popup/popup.html", 
+     
 
       "default_title": "definition",
       "default_icons": "img/dictionary-16.png"
