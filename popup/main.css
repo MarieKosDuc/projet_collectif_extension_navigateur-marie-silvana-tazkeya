@@ -1,0 +1,33 @@
+body{
+    width: 450px;
+    min-height: 450px; 
+    margin: 0;
+} 
+
+.title{
+    background-color: thistle;
+    width: 100%;
+    padding: 10px;
+
+} 
+.title > h1 {
+    color :blueviolet;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+} 
+footer{
+    background-color:antiquewhite; 
+    width: 450px;
+    min-height: 200px ;
+    margin: 0; 
+    text-align: center;
+} 
+.box {
+    height: 150px;
+    font-family: Impact; 
+} 
+.conteneur {
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+} 
