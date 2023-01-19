@@ -18,10 +18,14 @@
   "background": {
       "service_worker" : "background.js"
   },
+<<<<<<< HEAD
   "action":{
       "default_popup": "popup/popup.html", 
      
 
+=======
+  "action":{      
+      "default_popup": "popup/popup.html",
       "default_title": "definition",
       "default_icons": "img/dictionary-16.png"
   },

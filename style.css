@@ -1,5 +1,5 @@
 #definitionDiv {
-    position:fixed;
+    position:absolute;
     /* margin-top:23px; */
     /* margin-left:-60px; */
     color:rgb(0, 0, 0);
@@ -13,8 +13,8 @@
     display:none;
     width:0 auto;
     height:0 auto;
-    top:0px;
-    right:0%;
+    /* top:0px;
+    right:0%; */
     z-index: 1000;
     font-family: sans-serif;
 }
