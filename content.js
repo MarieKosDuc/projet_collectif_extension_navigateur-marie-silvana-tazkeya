@@ -103,17 +103,3 @@ function removeCSS() {
   let definitionDiv = document.getElementById("definitionDiv");
   definitionDiv.style.display = "none";
 }
-
-// document.addEventListener('dblclick', function(event) {
-//   var clickedElement = event.target;
-//    let myDiv = document.getElementById("definitionDiv");
-
-//   myDiv.style.position = 'absolute';
-//   myDiv.style.left = clickedElement.offsetLeft + clickedElement.offsetWidth + 'px';
-//   myDiv.style.top = clickedElement.offsetTop + 'px';
-  
-//   // Add the div to the page
-
-// });
-
-//

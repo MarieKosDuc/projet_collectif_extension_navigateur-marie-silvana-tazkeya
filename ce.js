@@ -1,4 +1,3 @@
-// constgetElementsByClassName(Aide)
 const url= "https://api.dictionaryapi.dev/api/v2/entries/en/";
 const result= document.getElementById("result");
 const sound= document.getElementById("sound");
@@ -10,16 +9,26 @@ btn.addEventListener("click",() => {
     fetch(`${url}${inpWord}`)
     .then((response) => response.json())
     .then((data) => {console.log(data);
-    result.innerHTML=`
-    <div class="word">
-    <h3>${inpWord}</h3>
-</div>
-<div class="details">
-    <p>${data[0].meanings[0].partOfSpeech}</p>
-    <p>/${data[0].phonetic}/</p>
-</div>
-<p class="wordDef">
-    ${data[0].meanings[0].definitions[0].definition}  
-</p>`;   
+    result.innerHTML=
+    `<div class="word">
+        <h3>${inpWord}</h3>
+        <button id = "myButton">
+        <i class="fas fa-volume-up"></i>
+    </button>
+    </div>
+    <div class="details">
+        <p>${data[0].meanings[0].partOfSpeech}</p>
+        <p>/${data[0].phonetic}/</p>
+    </div>
+        <p class="wordDef">${data[0].meanings[0].definitions[0].definition}</p>`;  
+
+        sound.setAttribute("src",`${data[0].phonetics[0].audio}`);
 });
+});
+
+
+
+//Put the sound
+sound.addEventListener('canplay', function() {
+    sound.play();
 });
