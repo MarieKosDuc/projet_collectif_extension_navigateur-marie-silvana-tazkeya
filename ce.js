@@ -23,12 +23,13 @@ btn.addEventListener("click",() => {
         <p class="wordDef">${data[0].meanings[0].definitions[0].definition}</p>`;  
 
         sound.setAttribute("src",`${data[0].phonetics[0].audio}`);
+        document.getElementById("myButton").addEventListener("click", playSound)
 });
 });
 
 
 
 //Put the sound
-sound.addEventListener('canplay', function() {
+function playSound(){
     sound.play();
-});
+}
